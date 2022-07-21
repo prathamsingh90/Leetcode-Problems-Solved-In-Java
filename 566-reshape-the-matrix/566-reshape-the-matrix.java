@@ -5,20 +5,12 @@ class Solution {
             return mat;
         }
         
-        List<Integer> tempArray = new ArrayList<Integer>(r*c);
+        int col = mat[0].length;
         int[][] result = new int[r][c];
         
-        for(int i=0; i<mat.length; i++) {
-            for(int j=0; j<mat[i].length; j++){
-                tempArray.add(mat[i][j]);
-            }
+        for(int i=0; i<r*c; i++) {
+            result[i/c][i%c] = mat[i/col][i%col];
         }
-       
-        for(int i=0; i<r; i++) {
-            for(int j=0; j<c; j++){
-                result[i][j]=tempArray.get(i*c+j);
-            }
-        }      
         return result;
     }
 }
