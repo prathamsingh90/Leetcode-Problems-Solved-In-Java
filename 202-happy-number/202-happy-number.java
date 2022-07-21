@@ -1,12 +1,14 @@
 class Solution {
     public boolean isHappy(int n) {
-        Set<Integer> sumMap = new HashSet<Integer>();
+        int slow=n, fast=n;
         
-        while(sumMap.add(n)) {
-            n = findHappySum(n);
-        }
+        do {
+            slow = findHappySum(slow);
+            fast = findHappySum(fast);
+            fast = findHappySum(fast);
+        } while(slow!=fast);
         
-        return (n==1?true:false);
+        return (slow==1?true:false);
         
     }
     
