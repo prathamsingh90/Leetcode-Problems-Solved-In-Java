@@ -1,6 +1,20 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
 
+        int zeroCount=0;
+        
+        for(int i=0; i<nums.length; i++){
+            if (nums[i]==0) {
+                zeroCount++;
+            }
+            
+            if (zeroCount>1){
+                return (new int[nums.length]);
+            }
+        }
+        
+        
+        
         int[] result = new int[nums.length];
         
         result[0]=1;
