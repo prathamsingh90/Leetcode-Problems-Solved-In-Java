@@ -8,13 +8,8 @@ class Solution {
              max_so_far = Math.max(Math.abs(max_so_far), pos_max);
              max_so_far = Math.max(Math.abs(max_so_far), Math.abs(neg_max));
             
-             if(pos_max<0){
-                 pos_max=0;
-             }
-            
-             if(neg_max>0){
-                 neg_max=0;
-             }
+             pos_max=(pos_max<0?0:pos_max);
+             neg_max=(neg_max>0?0:neg_max);
     }
         return max_so_far;
     }
